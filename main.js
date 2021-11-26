@@ -22,11 +22,18 @@ content[0].addEventListener("scroll",()=>{
     else if(scroll>=600 && scroll<800)
     {
         content[0].children[1].setAttribute("style",`transform:translate(${600-(scroll)}px,${scroll}px); opacity:1;`);
-        content[0].setAttribute("style",`transform:scale(${0.3});border-width:${(scroll-600)*1.35}px ${(scroll-600)*2.43}px;border-color:transparent;border-style:none; border-radius:100px;`);
+        if(scroll>700)
+        {
+            content[0].setAttribute("style",`transform:translate(-5px,36px) scale(0.18);border-width:${(scroll-600)*1.35}px ${(scroll-600)*2.43}px;border-color:transparent;border-style:none; border-radius:100px;`);
+        }
+        else
+        {
+            content[0].setAttribute("style",`transform:translate(-5px,36px) scale(0.18);opacity:${1-};border-width:${(scroll-600)*1.35}px ${(scroll-600)*2.43}px;border-color:transparent;border-style:none; border-radius:100px;opacity`);
+        }
     }
     else if(scroll>=800 && scroll<=1000)
     {
-        content[0].children[1].setAttribute("style",`transform:translate(-200px,${scroll}px); opacity:1;`);
+        content[0].children[1].setAttribute("style",`transform:translate(-199px,${scroll}px); opacity:1;`);
         content[0].children[1].children[1].setAttribute("style",`opacity:${(scroll-800)/200};`);
     }
     else
